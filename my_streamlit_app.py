@@ -8,7 +8,9 @@ st.title('Hello Wilders, welcome to my application!')
 st.write("I enjoy to discover stremalit possibilities")
 
 #link = "https://raw.githubusercontent.com/murpi/wilddata/master/quests/weather2019.csv"
+
 link = 'https://raw.githubusercontent.com/murpi/wilddata/master/quests/cars.csv'
+
 df_auto = pd.read_csv(link)
 
 # Here we use "magic commands":
@@ -27,3 +29,5 @@ fig, ax = plt.subplots()
 ax.hist(df_auto['weightlbs'], bins=20)
 st.pyplot(fig)
 
+countries = st.multiselect(
+        "Choose countries", list(df_auto['continent'].unique()), ["Europe"])
