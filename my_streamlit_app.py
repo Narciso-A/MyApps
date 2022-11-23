@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import seaborn as sns
+import matplotlib.pyplot as plt
 
 st.title('Hello Wilders, welcome to my application!')
 
@@ -15,10 +16,12 @@ df_auto
 
 # st.line_chart(df_weather['MAX_TEMPERATURE_C'])
 
-# import seaborn as sns
 viz_correlation = sns.heatmap(df_auto.corr(), 
 								center=0,
 								cmap = sns.color_palette("vlag", as_cmap=True),
 								annot=True)
 
 st.pyplot(viz_correlation.figure)
+
+plt.hist(df_auto['weightlbs'])
+
