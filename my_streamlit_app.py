@@ -38,8 +38,8 @@ mask = df_auto['continent'].str.contains(countries[0])
 
 for i in range(len(countries)):
 	print(type(countries[i]))
-	mask = mask or ( df_auto['continent'].str.contains(countries[i]) )
+	#mask = mask or ( df_auto['continent'].str.contains(countries[i]) )
 
 st.write(my_list)
 
-st.write(df_auto[df_auto['continent'].str.contains('Europe')])
+st.write( df_auto[ df_auto['continent'].str.contains('Europe')  ])
