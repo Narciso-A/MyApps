@@ -25,5 +25,5 @@ st.pyplot(viz_correlation.figure)
 
 viz_correlation_0 = plt.hist(df_auto['weightlbs'])
 
-st.pyplot(viz_correlation_0.figure)
+st.write(viz_correlation_0)
 
