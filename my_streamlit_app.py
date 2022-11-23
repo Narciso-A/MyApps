@@ -23,5 +23,5 @@ viz_correlation = sns.heatmap(df_auto.corr(),
 
 st.pyplot(viz_correlation.figure)
 
-plt.hist(df_auto['weightlbs'])
+st.pyplot(plt.hist(df_auto['weightlbs']))
 
