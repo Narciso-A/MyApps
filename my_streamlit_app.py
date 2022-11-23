@@ -35,7 +35,7 @@ st.write(len(countries))
 st.write(list(countries[:]))
 
 my_list = []
-for i in len(countries):
+for i in len(list(countries)):
 	my_list.append(countries[i])
 
 st.write(my_list)
