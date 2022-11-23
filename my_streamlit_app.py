@@ -30,4 +30,4 @@ ax.hist(df_auto['weightlbs'], bins=20)
 st.pyplot(fig)
 
 countries = st.multiselect(
-        "Choose countries", list(df_auto['continent'].unique()), ["Europe"])
+        "Choose countries", list(df_auto['continent'].unique()), ["Europe."])
