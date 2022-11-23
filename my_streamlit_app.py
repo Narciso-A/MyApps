@@ -33,4 +33,8 @@ countries = st.multiselect(
         "Choose countries", list(df_auto['continent'].unique()), [' Europe.'])
 st.write(type(countries))
 st.write(list(countries[:]))
+my_list = []
+for i in len(countries):
+	my_list.append(countries[i])
+st.write(my_list)
 # df_auto[df_auto['continent'].str.contains(list(countries))]
