@@ -34,10 +34,12 @@ countries = st.multiselect(
 st.write(len(countries))
 st.write(list(countries[:]))
 
-my_list = []
+mask = df_auto['continent'].str.contains(countries[i])
+
 for i in range(len(countries)):
 	print(type(countries[i]))
+	mask = mask or df_auto['continent'].str.contains(countries[i])
 
 st.write(my_list)
 
-st.write(df_auto[df_auto['continent'].str.contains(countries[i])])
+st.write(df_auto[mask])
