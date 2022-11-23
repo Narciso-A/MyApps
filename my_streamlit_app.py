@@ -18,7 +18,7 @@ df_auto
 # import seaborn as sns
 viz_correlation = sns.heatmap(df_auto.corr(), 
 								center=0,
-								cmap = sns.color_palette("vlag", as_cmap=True)
+								cmap = sns.color_palette("vlag", as_cmap=True),
 								annot=True)
 
 st.pyplot(viz_correlation.figure)
