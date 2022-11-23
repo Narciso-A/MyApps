@@ -40,4 +40,4 @@ for i in range(len(countries)):
 
 st.write(my_list)
 
-df_auto['continent'].str.contains(my_list)
+df_auto['continent'].str.contains(countries[i])
