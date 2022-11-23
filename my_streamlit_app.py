@@ -29,7 +29,7 @@ fig, ax = plt.subplots()
 ax.hist(df_auto['weightlbs'], bins=20)
 st.pyplot(fig)
 
-countries = st.multiselect(
+countries = st.selectbox(
         "Choose countries", list(df_auto['continent'].unique()), [' Europe.'])
 st.write(len(countries))
 st.write(list(countries[:]))
