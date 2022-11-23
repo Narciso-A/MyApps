@@ -32,4 +32,4 @@ st.pyplot(fig)
 countries = st.multiselect(
         "Choose countries", list(df_auto['continent'].unique()), [' Europe.'])
 
-df_auto[df_auto[continent].str.contains(countries)]
+df_auto[df_auto['continent'].str.contains(countries)]
