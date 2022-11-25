@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Entetes
-st.title('Cars')
+st.title('Cars :sunglasses:')
 st.sidebar.image('voiture_clip_art_gratuit_dessin.png')
 
 # data !
