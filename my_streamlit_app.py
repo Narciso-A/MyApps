@@ -3,21 +3,19 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 import seaborn as sns
-from PIL import Image
 
 st.title('Cars')
 st.sidebar.image('voiture_clip_art_gratuit_dessin.png')
 
-# st.success('I enjoy to discover stremalit possibilities', icon="✅")
-
 link = 'https://raw.githubusercontent.com/murpi/wilddata/master/quests/cars.csv'
 df_auto = pd.read_csv(link)
 
-
 continent_list = df_auto['continent'].unique()
 countries = st.sidebar.multiselect(
-        "Choix des continents", continent_list, continent_list[0])
-
+	"Choix des continents", 
+	continent_list, 
+	continent_list[0]
+	)
 
 df_auto_continent = df_auto[df_auto['continent'].isin(countries)]
 st.write('Table des valeurs')
@@ -25,10 +23,12 @@ df_auto_continent
 
 fig, ax = plt.subplots()
 plt.title('Correlation')
-ax = sns.heatmap(df_auto_continent.corr(), 
-								center=0,
-								cmap = sns.color_palette("vlag", as_cmap=True),
-								annot=True)
+ax = sns.heatmap(
+	df_auto_continent.corr(), 
+	center=0,
+	cmap = sns.color_palette("vlag", as_cmap=True),
+	annot=True
+	)
 st.pyplot(fig)
 
 fig, ax = plt.subplots()
