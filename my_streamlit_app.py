@@ -2,44 +2,39 @@ import streamlit as st
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
+import seaborn as sns
+from PIL import Image
 
-st.title('Hello Wilders, welcome to my application!')
+st.title('Cars')
+st.sidebar.image('voiture_clip_art_gratuit_dessin.png')
 
-st.write("I enjoy to discover stremalit possibilities")
-
-#link = "https://raw.githubusercontent.com/murpi/wilddata/master/quests/weather2019.csv"
+# st.success('I enjoy to discover stremalit possibilities', icon="✅")
 
 link = 'https://raw.githubusercontent.com/murpi/wilddata/master/quests/cars.csv'
-
 df_auto = pd.read_csv(link)
 
-# Here we use "magic commands":
-df_auto
 
-# st.line_chart(df_weather['MAX_TEMPERATURE_C'])
+continent_list = df_auto['continent'].unique()
+countries = st.sidebar.multiselect(
+        "Choix des continents", continent_list, continent_list[0])
 
-viz_correlation = sns.heatmap(df_auto.corr(), 
+
+df_auto_continent = df_auto[df_auto['continent'].isin(countries)]
+st.write('Table des valeurs')
+df_auto_continent
+
+fig, ax = plt.subplots()
+plt.title('Correlation')
+ax = sns.heatmap(df_auto_continent.corr(), 
 								center=0,
 								cmap = sns.color_palette("vlag", as_cmap=True),
 								annot=True)
-
-st.pyplot(viz_correlation.figure)
-
-fig, ax = plt.subplots()
-ax.hist(df_auto['weightlbs'], bins=20)
 st.pyplot(fig)
 
-countries = st.selectbox(
-        "Choose countries", list(df_auto['continent'].unique()), [' Europe.'])
-st.write(len(countries))
-st.write(list(countries[:]))
+fig, ax = plt.subplots()
+plt.title('Distribution')
+ax = sns.histplot(data=df_auto_continent, x='weightlbs')
+st.pyplot(fig)
 
-mask = df_auto['continent'].str.contains(countries[0])
+st.balloons()
 
-for i in range(len(countries)):
-	print(type(countries[i]))
-	#mask = mask or ( df_auto['continent'].str.contains(countries[i]) )
-
-st.write(my_list)
-
-st.write( df_auto[ df_auto['continent'].str.contains('Europe')  ])
