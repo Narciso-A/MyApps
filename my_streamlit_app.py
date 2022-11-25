@@ -35,14 +35,14 @@ ax = sns.heatmap(
 	annot=True
 	)
 st.pyplot(fig)
-st.write('## Poids et cylindrée évoluent dans le même sens')
+st.write('**Poids et cylindrée évoluent dans le même sens**')
 
 # Distribution poids
 fig, ax = plt.subplots()
 plt.title('Distribution')
 ax = sns.histplot(data=df_auto_continent, x='weightlbs')
 st.pyplot(fig)
-st.write('## Les Poids se répartissent de 1500 à 5000 lbs')
+st.write('**Les Poids se répartissent de 1500 à 5000 lbs**')
 
 st.balloons()
 
