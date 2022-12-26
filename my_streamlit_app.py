@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Entetes
-st.title('Cars :sunglasses:')
+st.title('Cars')
 st.sidebar.image('voiture_clip_art_gratuit_dessin.png')
 
 # data !
@@ -25,7 +25,7 @@ df_auto_continent = df_auto[df_auto['continent'].isin(countries)]
 st.write('Table des valeurs')
 df_auto_continent
 
-# Matrice corrletion
+# Matrice correlation
 fig, ax = plt.subplots()
 plt.title('Correlation')
 ax = sns.heatmap(
@@ -44,5 +44,4 @@ ax = sns.histplot(data=df_auto_continent, x='weightlbs')
 st.pyplot(fig)
 st.write('**Les Poids se répartissent de 1500 à 5000 lbs**')
 
-st.balloons()
 
